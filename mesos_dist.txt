@@ -1,2 +1,4 @@
+vm id/pwd user01/1234
+
 http://archive.apache.org/dist/mesos/1.8.0/mesos-1.8.0.tar.gz
 
