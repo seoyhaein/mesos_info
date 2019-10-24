@@ -2,3 +2,24 @@ vm id/pwd user01/1234
 
 http://archive.apache.org/dist/mesos/1.8.0/mesos-1.8.0.tar.gz
 
+# mesos docker-ubuntu
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv DF7D54CBE56151BF
+ 
+DISTRO=$(lsb_release -is | tr '[:upper:]' '[:lower:]')
+ 
+CODENAME=$(lsb_release -cs)
+ 
+# Add the repository
+ 
+echo "deb http://repos.mesosphere.io/${DISTRO} ${CODENAME} main" | sudo tee /etc/apt/sources.list.d/mesosphere.list
+ 
+sudo apt-get -y update
+
+
+#zookeeper install
+docker run -d -p 2181:2181 --name zookeeper zookeeper:3.4.11
+
+#mesos-master install
+
+docker run -it -d --name mesos-master -p 172.16.121.1:5050:5050 --link zookeeper -e MESOS_ZK=zk://zookeeper:2181/mesos -e MESOS_QUORUM=1 -e MESOS_CLUSTE=docker-compose -e MESOS_HOSTNAME=172.16.121.1 -e MESOS_WORK_DIR=/var/tmp/mesos -e MESOS_LOG_DIR=/var/log/mesos mesosphere/mesos-master:1.4.1
