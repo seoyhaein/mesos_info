@@ -23,3 +23,5 @@ docker run -d -p 2181:2181 --name zookeeper zookeeper:3.4.11
 #mesos-master install
 
 docker run -it -d --name mesos-master -p 172.17.0.1:5050:5050 --link zookeeper -e MESOS_ZK=zk://zookeeper:2181/mesos -e MESOS_QUORUM=1 -e MESOS_CLUSTE=docker-compose -e MESOS_HOSTNAME=172.17.0.1 -e MESOS_WORK_DIR=/var/tmp/mesos -e MESOS_LOG_DIR=/var/log/mesos mesosphere/mesos-master:1.4.1
+
+docker run -it -d --name mesos-slave -p 172.17.0.1:5051:5051 --link zookeeper:zookeeper --link mesos-master:mesos-master -e MESOS_MASTER=zk://zookeeper:2181/mesos -e MESOS_CONTAINERIZERS=docker -e MESOS_PORT=5051 -e MESOS_RESOURCES=ports:[11000-11999] -e MESOS_HOSTNAME=172.17.0.1 -e MESOS_WORK_DIR=/var/log/mesos -e MESOS_SYSTEMD_ENABLE_SUPPORT="false" --volume=/var/run/docker.sock:/var/run/docker.sock mesosphere/mesos-slave:1.4.1
