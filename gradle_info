@@ -1,0 +1,23 @@
+./gradlew build 에러시 대처 상황
+
+먼저, 빌드할 소스 파일들이 권한을 가지고 있는지 확인하자 (일단 chmod 777 -R 해당 폴도)
+
+그리고 java-8-openjdk-amd64 를 설치해준다.
+
+# JRE, JDK 설치
+  sudo apt-get install openjdk-8-jre
+  sudo apt-get install openjdk-8-jdk
+
+apt-get install 
+그리고 $JAVA_HOME 이 정확한 위치를 가리키고 있는지 확인해야한다.
+나의 경우는 /etc/profile 에 $JAVA_HOME 의 위치를 특정시켜줌.
+
+#JAVA_HOME=/usr/local/java/jdk1.8.0_231  //oracle java sdk
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+JRE_HOME=$JAVA_HOME/jre
+PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+export JAVA_HOME
+export JRE_HOME
+export PATH
+===============================================================================================================================
+
