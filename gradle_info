@@ -1,3 +1,5 @@
+https://www.sangkon.com/gradle-basic-tutorial/ 참고
+
 ./gradlew build 에러시 대처 상황
 
 먼저, 빌드할 소스 파일들이 권한을 가지고 있는지 확인하자 (일단 chmod 777 -R 해당 폴도)
