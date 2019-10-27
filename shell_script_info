@@ -1,0 +1,23 @@
+How to solve permission denied error when trying to echo into a file
+
+ 
+Problem:
+You are trying to echo a string into a file only accessible to root, e.g.:
+
+sudo echo "foo" > /etc/my.cnf
+but you only see this error message:
+
+-bash: /etc/my.cnf: Permission denied
+Solution:
+Use tee instead (this will also echo the string to stdout)
+
+echo "foo" | sudo tee /etc/my.cfg # Overwrite: Equivalent of echo "foo" > /etc/my.cnf
+echo "foo" | sudo tee -a /etc/my.cfg # Append: Equivalent of echo "foo" >> /etc/my.cnf
+The reason for the error message is that while echo is executed using sudo, >> /etc/my.cnf is run as normal user (not root).
+
+An alternate approach is to run a sub-shell as sudo:
+
+sudo bash -c 'echo "foo" > /etc/my.cnf'
+but this has several caveats e.g. related to escaping so I usually don’t recommend this approach.
+
+==============================================================================================================================
