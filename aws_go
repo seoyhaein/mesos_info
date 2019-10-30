@@ -1,3 +1,12 @@
+변환함수들
+
+0. https://docs.aws.amazon.com/sdk-for-go/api/aws/
+
+aws.String
+aws.StringValue
+aws.StringSlice
+aws.StringValueSlice
+
 1. NewSession 와 NewSessionWithOptions 의 차이점
 
 둘다 session 을 만들어 주는 함수이지만, NewSession 는 좀더 심플한 설정을 사용할때 사용하고 NewSessionWithOptions 은 좀더 상세한 설정을 
