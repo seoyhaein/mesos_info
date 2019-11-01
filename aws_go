@@ -69,3 +69,16 @@ set in the config.
 See the NewSessionWithOptions func for information on how to override or 
 control through code how the Session will be created, such as specifying the config profile, 
 and controlling if shared config is enabled or not.
+
+============================================================================================================================
+
+aws vpc 관련 참고 링크
+
+1. https://www.44bits.io/ko/post/understanding_aws_vpc
+2. https://bluese05.tistory.com/48
+3. https://www.youtube.com/watch?v=LX5lHYGFcnA
+4. https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/vpc-recommended-nacl-rules.html
+5. http://faq.hostway.co.kr/AWS_HELP/7912
+6. https://tech.cloud.nongshim.co.kr/2018/10/16/4-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0vpc-subnet-route-table-internet-gateway/
+
+
