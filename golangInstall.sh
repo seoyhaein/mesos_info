@@ -10,7 +10,7 @@ wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz && tar -C /usr/local -xz
 
 echo "PATH Setting~~"
 echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
-. ~/.bashrc
+source ~/.bashrc
 
 echo "GOPATH,GOBIN Setting"
 
@@ -21,4 +21,4 @@ export PATH=$PATH:/usr/local/go/bin:$GOBIN
 EOF
 
 echo "delve install"
-. /etc/profile.d/golang-env.sh && go get -u github.com/go-delve/delve/cmd/dlv
+source /etc/profile.d/golang-env.sh && go get -u github.com/go-delve/delve/cmd/dlv
