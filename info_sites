@@ -3,3 +3,12 @@ https://goodysuits.github.io/2018/08/12/aws-sdk-go-ec2-describe-example.html
 
 shell script
 https://stackoverflow.com/questions/16011245/source-files-in-a-bash-script
+
+Execute Shell Script Using . ./ (dot space dot slash)
+
+While executing the shell script using “dot space dot slash”, as shown below, 
+it will execute the script in the current shell without forking a sub shell.
+
+$ . ./setup.bash
+In other words, this executes the commands specified in the setup.bash in the current shell, 
+and prepares the environment for you.
