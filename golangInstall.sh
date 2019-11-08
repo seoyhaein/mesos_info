@@ -1,12 +1,18 @@
+
 #!/usr/bin/env bash
 
 SHELL_PATH=`pwd -P`
 
 mkdir -p ${SHELL_PATH}/Arch && cd ${SHELL_PATH}/Arch
+
+echo "GO ROOT Setting~~"
 wget https://dl.google.com/go/go1.13.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.13.linux-amd64.tar.gz
 
+echo "PATH Setting~~"
 echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
 . ~/.bashrc
+
+echo "GOPATH,GOBIN Setting"
 
 cat > /etc/profile.d/golang-env.sh << 'EOF'
 export GOPATH=$HOME/go
@@ -14,22 +20,5 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin:$GOBIN
 EOF
 
-. /etc/profile.d/golang-env.sh
-
-##
-Hi naman,
-Please check source is a shell builtin or not , in that you run this command:
-[root@ ~]# type source
-source is a shell builtin
-
-Otherwise, please try this:
-
-use '.' instead of 'source'
-
-#!/bin/sh
-
-. ~/.bash_profile
-
-or
-
-/bin/bash -c 'source ~/.bash_profile'
+echo "delve install"
+. /etc/profile.d/golang-env.sh && go get -u github.com/go-delve/delve/cmd/dlv
