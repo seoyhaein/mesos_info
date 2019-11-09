@@ -55,3 +55,7 @@ The zero value of a slice
 
 
 https://medium.com/golangspec/sync-rwmutex-ca6c6c3208a0
+
+
+go singleton 구현 문제 조사해보기
+https://fenderist.tistory.com/291
