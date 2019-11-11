@@ -1,3 +1,5 @@
+curl -X POST -H 'Content-Type:application/json' -d @task.json http://스케줄러외부아이피:스케줄러포트/task
+
 변환함수들
 
 0. https://docs.aws.amazon.com/sdk-for-go/api/aws/
