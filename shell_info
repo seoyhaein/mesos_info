@@ -1,0 +1,5 @@
+netstat -ntlp | grep :포트번호 
+#특정포트 사용 process 확인
+
+kill -9 특정포트
+#특정포트 삭제
