@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #zookeeper
-docker run -d --net=host netflixoss/exhibitor:1.5.2
+docker run -d --net=host --name zookeeper netflixoss/exhibitor:1.5.2
 
 #mesos-master
 docker run -d --net=host --name mesos-master\
