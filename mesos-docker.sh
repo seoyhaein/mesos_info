@@ -23,7 +23,7 @@ docker run -d --net=host --privileged --name mesos-slave \
   -e MESOS_CONTAINERIZERS=docker,mesos \
   -e MESOS_LOG_DIR=/var/log/mesos \
   -e MESOS_WORK_DIR=/var/tmp/mesos \
-  -e MESOS_SYSTEMD_ENABLE_SUPPORT="true" \
+  -e MESOS_SYSTEMD_ENABLE_SUPPORT="false" \
   -v "$(pwd)/log/mesos:/var/log/mesos" \
   -v "$(pwd)/tmp/mesos:/var/tmp/mesos" \
   -v /var/run/docker.sock:/var/run/docker.sock \
