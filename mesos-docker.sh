@@ -8,7 +8,7 @@ docker run -d --net=host --name mesos-master\
   -e MESOS_PORT=5050 \
   -e MESOS_ZK=zk://127.0.0.1:2181/mesos \
   -e MESOS_QUORUM=1 \
-  -e MESOS_CLUSTER=Tester
+  -e MESOS_CLUSTER=Tester \
   -e MESOS_LOG_DIR=/var/log/mesos \
   -e MESOS_WORK_DIR=/var/tmp/mesos \
   -v "$(pwd)/log/mesos:/var/log/mesos" \
